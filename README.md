@@ -1,6 +1,9 @@
 # portfolio-website
 A responsive portfolio template website built with HTML, CSS and particles.js library.
 
+[![Star this repo](https://img.shields.io/github/stars/albino98/portfolio-website.svg?style=social)](https://github.com/albino98/portfolio-website)
+
+
 ### Dark theme
 
 ![Dark-theme](1.png)

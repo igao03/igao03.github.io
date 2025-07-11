@@ -9,6 +9,8 @@ A responsive portfolio template website built with HTML, CSS and particles.js li
 
 ![Light-theme](2.png)
 
+![Light-theme](3.png)
+
 ## Licenza
 
 Questo progetto è distribuito sotto licenza [MIT](LICENSE).

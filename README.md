@@ -1,7 +1,13 @@
 # portfolio-website
 A responsive portfolio template website built with HTML, CSS and particles.js library.
 
+### Dark theme
 
+![Dark-theme](1.png)
+
+### Light theme
+
+![Light-theme](2.png)
 
 ## Licenza
 

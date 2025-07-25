@@ -100,17 +100,40 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     .project-card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
       background-color: rgba(255, 255, 255, 0.05);
       margin: 1rem auto;
       padding: 1rem;
       border-radius: 10px;
-      max-width: 600px;
+      max-width: 1150px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
     }
     .project-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .project-description {
+      flex: 1 1 300px;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center;    
+      text-align: center; 
+      align-items: center;
+      height: 100%; 
+      padding: 65px;
+    }
+
+    .project-carousel {
+      flex: 1 1 300px;
+      min-width: 250px;
     }
     .project-card img {
       max-width: 100%;
@@ -143,6 +166,57 @@
     #theme-toggle:hover {
       background-color: #bbb;
     }
+
+    .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .slide img,
+  .slide video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .nav {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  .nav button {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    pointer-events: auto;
+    transition: background 0.3s;
+  }
+
+  .nav button:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
   </style>
 </head>
 <body>
@@ -151,8 +225,8 @@
   <header>
     <div id="particles-header" class="particles-container"></div>
     <div class="content">
-      <h1>Name Surname</h1>
-      <p>Software Engineer &amp; Programming Enthusiast</p>
+      <h1>Iris Muqing Gao</h1>
+      <p>Computer Science Master's Graduate</p>
       <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -166,7 +240,7 @@
     <div class="particles-container"></div>
     <div class="content">
       <h2>About Me</h2>
-      <p style="margin-left: 18%; margin-right: 18%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p style="margin-left: 18%; margin-right: 18%;">I'm a passionate Computer Science Master's graduate with expertise in artificial intelligence, machine learning, and full-stack development. My academic journey has equipped me with strong problem-solving skills and a deep understanding of computer science fundamentals. Beyond code, I'm passionate about making tech more inclusive and accessible. I aspire to build tools that not only work well — but work for everyone.</p>
     </div>
   </section>
 
@@ -175,10 +249,14 @@
     <div class="content">
       <h2>Skills</h2>
       <ul>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
+        <li>Pyton</li>
+        <li>Java</li>
+        <li>Javascript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>C</li>
+        <li>SQL</li>
+        <li>R</li>
       </ul>
     </div>
   </section>
@@ -188,9 +266,36 @@
     <div class="content">
       <h2>Projects</h2>
       <div class="project-card">
-        <h3>First project</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt.</p>
-        <a href="">View Project</a>
+        <div class="project-description">
+          <h3>Gamify</h3>
+          <p>Served as Front-End Engineer on Gamify — a team-built web application designed to help students stay organized and motivated through integrated schedule tracking, assignment management, and a gamified reward system.</p>
+          <a href="https://github.com/itsKia2/Gamify">Github Link</a>
+        </div>
+
+        <div class="project-carousel">
+          <div class="carousel">
+            <div class="slides" id="project-carousel">
+              <div class="slide">
+                <img src="files/gamify_1.jpg" alt="Screenshot 1" />
+              </div>
+              <div class="slide">
+                <img src="files/gamify_2.jpg" alt="Screenshot 2" />
+              </div>
+              <!-- <div class="slide">
+                <video width="100%" height="auto" controls>
+                  <source src="files/cs320.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div> -->
+            </div>
+            <div class="nav">
+              <button onclick="prevSlide()">←</button>
+              <button onclick="nextSlide()">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       </div>
       <div class="project-card">
         <h3>Project</h3>
@@ -209,7 +314,7 @@
     <div class="particles-container"></div>
     <div class="content">
       <h2>Contact</h2>
-      <p>Email: <a href="" style="color:#a0c4ff;">example@example.com</a></p>
+      <p>Email: <a href="" style="color:#a0c4ff;">gaomuqing0407@gmail.com</a></p>
     </div>
   </section>
 
@@ -281,5 +386,26 @@
       reloadAllParticles();
     });
   </script>
+  <script>
+  const carousel = document.getElementById('project-carousel');
+  const totalSlides = carousel.children.length;
+  let slideIndex = 0;
+
+  function showSlide(index) {
+    slideIndex = (index + totalSlides) % totalSlides;
+    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(slideIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(slideIndex - 1);
+  }
+</script>
+
 </body>
 </html>
+
+

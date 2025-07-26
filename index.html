@@ -85,7 +85,7 @@
     }
     ul {
       list-style: none;
-      padding: 0;
+      padding: 30px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -102,16 +102,17 @@
 
     #about {
       text-align: center;
-      padding: 40px 18%;
+      padding: 40px 15%;
     }
 
     #about .content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      /* gap: 20px;
-      margin-top: 10px; */
+      /* gap: 20px; */
+      /* margin-top: 0px; */
       text-align: middle; 
+      /* padding: 5px; */
     }
 
     #about p {
@@ -269,7 +270,7 @@
 
   <section id="about">
     <div class="particles-container"></div>
-    <h2>About Me</h2>
+    <h2 style="margin-top: 1rem;">About Me</h2>
     <div class="content">
         <p style="margin-left: 6%; margin-right: 6%;">I'm a passionate Computer Science Master's graduate with expertise in artificial intelligence, machine learning, and full-stack development. My academic journey has equipped me with strong problem-solving skills and a deep understanding of computer science fundamentals. Beyond code, I'm passionate about making tech more inclusive and accessible. I aspire to build tools that not only work well — but work for everyone.</p>
       <img src="files/one.jpg" alt="pic"/>
@@ -358,9 +359,27 @@
       </div>
 
       <div class="project-card">
-        <h3>Project</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt.</p>
-        <a href="">View Project</a>
+        <div class="project-description">
+          <h3>Crescendo <em>*Ongoing*</em></h3>
+          <p>Working as a Software Engineer at Crescendo, a student-led startup that delivers affordable, AI-powered piano lessons with real-time feedback. Our mission is to make high-quality, engaging music education accessible to learners from all backgrounds.</p>
+        </div>
+
+        <div class="project-carousel" data-carousel>
+          <div class="carousel" data-slides>
+            <div class="slides">
+              <div class="slide">
+                <img src="files/cresc_1.jpg" alt="Screenshot 1" />
+              </div>
+              <div class="slide">
+                <img src="files/cresc_2.jpg" alt="Screenshot 2" />
+              </div>
+            </div>
+            <div class="nav">
+              <button class="prev">←</button>
+              <button class="next">→</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

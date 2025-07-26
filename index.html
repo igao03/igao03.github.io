@@ -99,6 +99,32 @@
       color: #e0e0e0;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+
+    #about {
+      text-align: center;
+      padding: 40px 18%;
+    }
+
+    #about .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* gap: 20px;
+      margin-top: 10px; */
+      text-align: middle; 
+    }
+
+    #about p {
+      flex: 1;
+    }
+
+    #about img {
+      width: 200px; 
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
     .project-card {
       display: flex;
       flex-direction: row;
@@ -243,9 +269,10 @@
 
   <section id="about">
     <div class="particles-container"></div>
+    <h2>About Me</h2>
     <div class="content">
-      <h2>About Me</h2>
-      <p style="margin-left: 18%; margin-right: 18%;">I'm a passionate Computer Science Master's graduate with expertise in artificial intelligence, machine learning, and full-stack development. My academic journey has equipped me with strong problem-solving skills and a deep understanding of computer science fundamentals. Beyond code, I'm passionate about making tech more inclusive and accessible. I aspire to build tools that not only work well — but work for everyone.</p>
+        <p style="margin-left: 6%; margin-right: 6%;">I'm a passionate Computer Science Master's graduate with expertise in artificial intelligence, machine learning, and full-stack development. My academic journey has equipped me with strong problem-solving skills and a deep understanding of computer science fundamentals. Beyond code, I'm passionate about making tech more inclusive and accessible. I aspire to build tools that not only work well — but work for everyone.</p>
+      <img src="files/one.jpg" alt="pic"/>
     </div>
   </section>
 
@@ -305,8 +332,8 @@
       <div class="project-card">
         <div class="project-description">
           <h3>Dance Data Project</h3>
-          <p>Served as Front-End Engineer on Gamify — a team-built web application designed to help students stay organized and motivated through integrated schedule tracking, assignment management, and a gamified reward system.</p>
-          <a href="https://sds-capstone.github.io/dancedata-s25/">Website</a>
+          <p>Collaborated with Dance Data Project® to build an interactive platform showcasing women in dance-related roles—choreographers, designers, stage managers, and more. The site features a searchable table and region-based map, allowing users to discover talent by location. Artists can submit profiles to increase visibility and job opportunities, supporting DDP’s mission to promote gender equity in the arts through data-driven tools.</p>
+          <a href="https://sds-capstone.github.io/dancedata-s25/">Website</a> 
         </div>
 
         <div class="project-carousel" data-carousel>
@@ -317,6 +344,9 @@
               </div>
               <div class="slide">
                 <img src="files/dance_2.jpg" alt="Screenshot 2" />
+              </div>
+              <div class="slide">
+                <img src="files/dance_3.jpg" alt="Screenshot 3" />
               </div>
             </div>
             <div class="nav">

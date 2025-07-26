@@ -185,7 +185,12 @@
     box-sizing: border-box;
   }
 
-  .slide img,
+  .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .slide video {
     width: 100%;
     height: auto;
@@ -249,7 +254,7 @@
     <div class="content">
       <h2>Skills</h2>
       <ul>
-        <li>Pyton</li>
+        <li>Python</li>
         <li>Java</li>
         <li>Javascript</li>
         <li>HTML</li>
@@ -272,9 +277,9 @@
           <a href="https://github.com/itsKia2/Gamify">Github Link</a>
         </div>
 
-        <div class="project-carousel">
-          <div class="carousel">
-            <div class="slides" id="project-carousel">
+        <div class="project-carousel" data-carousel>
+          <div class="carousel" data-slides>
+            <div class="slides">
               <div class="slide">
                 <img src="files/gamify_1.jpg" alt="Screenshot 1" />
               </div>
@@ -289,8 +294,8 @@
               </div> -->
             </div>
             <div class="nav">
-              <button onclick="prevSlide()">←</button>
-              <button onclick="nextSlide()">→</button>
+              <button class="prev">←</button>
+              <button class="next">→</button>
             </div>
           </div>
         </div>
@@ -298,10 +303,30 @@
 
       </div>
       <div class="project-card">
-        <h3>Project</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt.</p>
-        <a href="">View Project</a>
+        <div class="project-description">
+          <h3>Dance Data Project</h3>
+          <p>Served as Front-End Engineer on Gamify — a team-built web application designed to help students stay organized and motivated through integrated schedule tracking, assignment management, and a gamified reward system.</p>
+          <a href="https://sds-capstone.github.io/dancedata-s25/">Website</a>
+        </div>
+
+        <div class="project-carousel" data-carousel>
+          <div class="carousel" data-slides>
+            <div class="slides">
+              <div class="slide">
+                <img src="files/dance_1.jpg" alt="Screenshot 1" />
+              </div>
+              <div class="slide">
+                <img src="files/dance_2.jpg" alt="Screenshot 2" />
+              </div>
+            </div>
+            <div class="nav">
+              <button class="prev">←</button>
+              <button class="next">→</button>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="project-card">
         <h3>Project</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt.</p>
@@ -387,23 +412,29 @@
     });
   </script>
   <script>
-  const carousel = document.getElementById('project-carousel');
-  const totalSlides = carousel.children.length;
-  let slideIndex = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('[data-carousel]').forEach(carousel => {
+        const slidesContainer = carousel.querySelector('[data-slides]');
+        const slides = slidesContainer.querySelector('.slides');
+        const totalSlides = slides.children.length;
+        let index = 0;
 
-  function showSlide(index) {
-    slideIndex = (index + totalSlides) % totalSlides;
-    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
-  }
+        const updateSlide = () => {
+          slides.style.transform = `translateX(-${index * 100}%)`;
+        };
 
-  function nextSlide() {
-    showSlide(slideIndex + 1);
-  }
+        carousel.querySelector('.prev').addEventListener('click', () => {
+          index = (index - 1 + totalSlides) % totalSlides;
+          updateSlide();
+        });
 
-  function prevSlide() {
-    showSlide(slideIndex - 1);
-  }
-</script>
+        carousel.querySelector('.next').addEventListener('click', () => {
+          index = (index + 1) % totalSlides;
+          updateSlide();
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
